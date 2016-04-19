@@ -1,7 +1,8 @@
 box: iyxd/archlinux:original
 build:
   steps:
-    - pacman -Syu --no-confirm
+    - script:
+        code: pacman -Syu --no-confirm
 deploy:
   steps:
     - internal/docker-push:
