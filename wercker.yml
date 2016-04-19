@@ -1,0 +1,12 @@
+box: iyxd/archlinux:original
+build:
+  steps:
+    - pacman -Syu --no-confirm
+deploy:
+  steps:
+    - internal/docker-push:
+        username: $USERNAME
+        password: $PASSWORD
+        tag: latest
+        repository: iyxd/archlinux
+        registry: https://registry.hub.docker.com
